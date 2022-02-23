@@ -30,6 +30,7 @@ public class Juego {
             }
         }
     }
+
     public static void fallarNumero (int num) {
         for (int i = 0; i< adivinalo.length; i++){
             for (int j = 0; j< jugador.length; j++){
