@@ -1,9 +1,57 @@
 package Ejercicio4;
 
+import java.util.Scanner;
 public class Erastotenes {
 
+    //metodo para pedir número
+
+    public static int pedirNumero() {
+        Scanner scanner=new Scanner(System.in);
+        int numero = 0;
+        System.out.println("Introduzca un numero positovo mayor que 0");
+        boolean valido=false;
+        while (!valido){
+            try {
+                numero=scanner.nextInt();
+                if (numero<=0){
+                    System.out.println("introduzca un numero positivo");
+                    scanner.nextLine();
+                }
+                else {
+                    valido=true;
+                }
+            }
+            catch (Exception e){
+                System.out.println("valor no válido, ha de ser entero mayor que 0");
+                scanner.nextLine();
+            }
+        }
+        return numero;
+    }
+
     //metodo para montar el array de impares
-    public static int[] montarCriba(int num){
+
+    public static void cargarCriba(int[] criba, int num){
+
+        criba[0]=3;
+        int i=1, calculo=0;
+        boolean continuar=true;
+
+        while (continuar){
+            calculo=criba[i-1]+2;
+
+            if (calculo<=num){
+                criba[i]=calculo;
+                i++;
+
+            }else{
+                continuar = false;
+            }
+        }
+
+    }
+
+   /* public static int[] montarCriba(int num){
         int [] criba = new int [num];
         criba[0]=3;
         for (int i= 1; i<num; i++){
@@ -22,7 +70,7 @@ public class Erastotenes {
         }
         return criba;
     }
-
+*/
     //metodo para recorrer el array
     public static int[] recorrerCriba(int [] criba, int num){
         int limite = (int) Math.sqrt(num);
