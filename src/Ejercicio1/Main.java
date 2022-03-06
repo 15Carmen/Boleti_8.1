@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Apartado 1
+        //Apartado 1 NO TERMINADO
 
        /*
        Crear un array con números aleatorios. Como el ejercicio no
